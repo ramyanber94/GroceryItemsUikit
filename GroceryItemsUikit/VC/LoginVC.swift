@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
     var headerView: UIView!
@@ -77,7 +78,7 @@ class LoginVC: UIViewController {
         btnLogin = UIButton()
         btnRegister = UIButton()
         
-        btnLogin.frame = CGRect(x: sf.w * 0.1 , y: sf.h * 0.53 ,width: sf.w * 0.8, height: sf.h * 0.08)
+        btnLogin.frame = CGRect(x: sf.w * 0.1 , y: sf.h * 0.52 ,width: sf.w * 0.8, height: sf.h * 0.08)
         btnLogin.backgroundColor = UIColor(named: "ButtonColor2")
         btnLogin.setTitle("Login", for: .normal)
         btnLogin.addTarget(self, action: #selector(login), for: .touchUpInside)
@@ -93,7 +94,24 @@ class LoginVC: UIViewController {
         bodyView.addSubview(btnRegister)
     }
     @objc func login(){
-        print("here")
+        guard
+          let email = txtEmail.text,
+          let password = txtPassword.text,
+          !email.isEmpty,
+          !password.isEmpty
+        else { return }
+
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+          if let error = error, user == nil {
+            let alert = UIAlertController(
+              title: "Sign In Failed",
+              message: error.localizedDescription,
+              preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+          }
+        }
     }
     
     @objc func register(){
@@ -103,3 +121,6 @@ class LoginVC: UIViewController {
     }
 
 }
+
+
+

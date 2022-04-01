@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterVC: UIViewController {
     var headerView: UIView!
@@ -13,7 +14,6 @@ class RegisterVC: UIViewController {
     var bodyView: UIView!
     var txtPassword: UITextField!
     var txtEmail: UITextField!
-    var txtName: UITextField!
     var btnRegister: UIButton!
     var sf = ScaleFactor()
     
@@ -46,7 +46,6 @@ class RegisterVC: UIViewController {
         headerTitle.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 1).isActive = true
         headerTitle.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier:  0.3).isActive = true
         
-        txtName = UITextField(frame: CGRect(x: sf.w * 0.1 , y: sf.h * 0.3 ,width: sf.w * 0.8, height: sf.h * 0.08))
         txtEmail = UITextField(frame: CGRect(x: sf.w * 0.1 , y: sf.h * 0.4 ,width: sf.w * 0.8, height: sf.h * 0.08))
         txtPassword = UITextField(frame: CGRect(x: sf.w * 0.1 , y: sf.h * 0.5 ,width: sf.w * 0.8, height: sf.h * 0.08))
         bodyView.addSubview(txtEmail)
@@ -56,15 +55,6 @@ class RegisterVC: UIViewController {
         bodyView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         bodyView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         bodyView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
-        
-        txtName.layer.borderWidth = 1
-        txtName.layer.cornerRadius = 8
-        txtName.placeholder = "Name"
-        txtName.textAlignment = .left
-        txtName.setLeftPaddingPoints(10)
-        txtName.backgroundColor = UIColor.white
-        txtName.textColor = UIColor.blue
-        bodyView.addSubview(txtName)
         
         txtEmail.layer.borderWidth = 1
         txtEmail.layer.cornerRadius = 8
@@ -96,6 +86,18 @@ class RegisterVC: UIViewController {
     }
     
     @objc func register(){
-        
+        guard
+          let email = txtEmail.text,
+          let password = txtPassword.text,
+          !email.isEmpty,
+          !password.isEmpty
+        else { return }
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+          if error == nil {
+            Auth.auth().signIn(withEmail: email, password: password)
+          } else {
+            print("Error in createUser: \(error?.localizedDescription ?? "")")
+          }
+        }
     }
 }

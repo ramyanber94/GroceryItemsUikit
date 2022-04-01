@@ -1,0 +1,23 @@
+{
+  "configurations" : [
+    {
+      "id" : "A0405D8B-1B26-4017-AE17-46DEF684CEDA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:GroceryItemsUikit.xcodeproj",
+      "identifier" : "461DFD4427F6A0A2001ADBE0",
+      "name" : "GroceryItemsUikit"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}
