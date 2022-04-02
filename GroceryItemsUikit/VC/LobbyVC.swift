@@ -14,6 +14,12 @@ class LobbyVC: UIViewController {
     var bodyView: UIView!
     var sf = ScaleFactor()
     
+    lazy var collectionView: CollectionVC = {
+        let tv = CollectionVC()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +30,7 @@ class LobbyVC: UIViewController {
         headerView.backgroundColor = .white
         self.view.addSubview(headerView)
         self.view.addSubview(bodyView)
-        
+  
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -45,13 +51,20 @@ class LobbyVC: UIViewController {
         bodyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         bodyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         bodyView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        bodyView.widthAnchor.constraint(equalTo: self.view.widthAnchor , multiplier: 1).isActive = true
+        bodyView.widthAnchor.constraint(equalTo: self.view.widthAnchor , multiplier: 1.0).isActive = true
         bodyView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.65).isActive = true
+        
+        bodyView.addSubview(collectionView)
+        collectionView.leadingAnchor.constraint(equalTo: bodyView.leadingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: bodyView.topAnchor).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: bodyView.widthAnchor, multiplier: 1.0 ).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: bodyView.heightAnchor, multiplier: 2.0).isActive = true
         
     }
     
     
 }
+
 
 #if canImport(SwiftUI) && DEBUG
 

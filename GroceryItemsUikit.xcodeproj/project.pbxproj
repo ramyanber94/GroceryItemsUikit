@@ -24,6 +24,7 @@
 		46E4D02C27F6A6B60096D9CB /* ScaleFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4D02B27F6A6B60096D9CB /* ScaleFactor.swift */; };
 		46E4D03027F6BB8D0096D9CB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4D02F27F6BB8D0096D9CB /* TextField.swift */; };
 		46E4D03227F6BC630096D9CB /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4D03127F6BC630096D9CB /* RegisterVC.swift */; };
+		46FF5F5927F782CB0032B3F1 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF5F5827F782CB0032B3F1 /* CollectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		46E4D02B27F6A6B60096D9CB /* ScaleFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleFactor.swift; sourceTree = "<group>"; };
 		46E4D02F27F6BB8D0096D9CB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		46E4D03127F6BC630096D9CB /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		46FF5F5827F782CB0032B3F1 /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				46E4D02827F6A4D90096D9CB /* LoginVC.swift */,
 				46E4D03127F6BC630096D9CB /* RegisterVC.swift */,
 				46CCF37C27F6D26800E47EE0 /* LobbyVC.swift */,
+				46FF5F5827F782CB0032B3F1 /* CollectionVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				46E4D02C27F6A6B60096D9CB /* ScaleFactor.swift in Sources */,
 				461DFD4927F6A0A2001ADBE0 /* AppDelegate.swift in Sources */,
 				46E4D02927F6A4D90096D9CB /* LoginVC.swift in Sources */,
+				46FF5F5927F782CB0032B3F1 /* CollectionVC.swift in Sources */,
 				46E4D03227F6BC630096D9CB /* RegisterVC.swift in Sources */,
 				46E4D03027F6BB8D0096D9CB /* TextField.swift in Sources */,
 				461DFD4B27F6A0A2001ADBE0 /* SceneDelegate.swift in Sources */,

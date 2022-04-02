@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>groceryitems-6835a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:389957878512:ios:3c747a82e15ee44fed3835</string>
+	<key>CFBundleIdentifier</key>
+	<string>groceryitems-6835a</string>
 </dict>
 </plist>
